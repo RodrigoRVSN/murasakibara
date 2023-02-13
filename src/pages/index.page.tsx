@@ -1,22 +1,19 @@
 import Head from 'next/head'
+import { RecaptchaV2 } from '@components/RecaptchaV2'
+import { RecaptchaV3 } from '@components/RecaptchaV3'
 
-export default function Home (): JSX.Element {
+const Home = () => {
   return (
     <>
       <Head>
         <title>Home</title>
       </Head>
-      <h1>
-        Hello! Template made by
-        <a
-          target="_blank"
-          href="https://github.com/RodrigoRVSN"
-          rel="noreferrer"
-        >
-          Rodrigo Victor
-        </a>
-      </h1>
-      <button>oi</button>
+
+      <RecaptchaV2 />
+
+      <RecaptchaV3 />
     </>
   )
 }
+
+export default Home
