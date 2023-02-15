@@ -34,6 +34,7 @@ export const RecaptchaV3 = () => {
       <button onClick={handleVerifyRecaptchav3}>Gerar token do ReCAPTCHA V3</button>
 
       <h1>Resposta do google: {JSON.stringify(responseFromGoogle)}</h1>
+
       <p>Token: {tokenv3}</p>
     </section>
   )
