@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import type { Context, RecaptchaV2ProviderProps } from './RecaptchaV2Provider.types'
+import type { ContextParams, RecaptchaV2ProviderProps } from './RecaptchaV2Provider.types'
 import Script from 'next/script'
 import { createContext, useState, useEffect, useContext, useRef, useMemo } from 'react'
 
 const RECAPTCHA_SCRIPT_SRC_URL = 'https://www.google.com/recaptcha/api.js?render=explicit'
 
-export const RecatapchaV2Context = createContext({} as Context)
+export const RecatapchaV2Context = createContext({} as ContextParams)
 
 export const RecaptchaV2Provider = ({ children }: RecaptchaV2ProviderProps) => {
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false)

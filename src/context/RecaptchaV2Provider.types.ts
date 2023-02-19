@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export type Context = {
+export type ContextParams = {
   executeRecaptcha: () => Promise<string>
 }
 
