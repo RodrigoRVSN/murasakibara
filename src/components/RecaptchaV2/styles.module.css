@@ -1,4 +1,5 @@
 .wrapper__recaptcha-v2 {
   background-color: pink;
-  padding: 2rem
+  padding: 2rem;
+  word-break: break-all;
 }

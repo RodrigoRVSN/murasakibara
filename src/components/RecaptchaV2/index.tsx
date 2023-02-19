@@ -1,17 +1,16 @@
 
-import { useState, useRef } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha'
+import { useState } from 'react'
+import { useRecaptchaV2 } from '@App/context/RecaptchaV2Provider'
 import styles from './styles.module.css'
 
 export const RecaptchaV2 = () => {
   const [tokenv2, setTokenv2] = useState('')
   const [responseFromGoogle, setResponseFromGoogle] = useState('')
-  const recaptchaRefV2 = useRef<ReCAPTCHA>(null)
+  const { executeRecaptcha } = useRecaptchaV2()
 
   const handleVerifyRecaptchav2 = async () => {
-    const token = await recaptchaRefV2?.current?.executeAsync()
-
-    recaptchaRefV2?.current?.reset()
+    const token = await executeRecaptcha()
+    console.log('execute -> ', { token })
 
     if (!token) return
 
@@ -40,11 +39,6 @@ export const RecaptchaV2 = () => {
       <h1>Resposta do google: {JSON.stringify(responseFromGoogle)}</h1>
       <p>Token: {tokenv2}</p>
 
-      <ReCAPTCHA
-        size='invisible'
-        ref={recaptchaRefV2}
-        sitekey='6Lf3UXkkAAAAAGoRjJ1V-YT_A6nd9LvksTN5rJc_'
-      />
     </section>
   )
 }
